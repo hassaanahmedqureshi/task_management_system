@@ -8,10 +8,12 @@
 <div class="mb-4">
   <label class="block text-gray-700">Sort By</label>
   <select class="w-full p-2 border border-gray-300 rounded" [(ngModel)]="sortOption" (ngModelChange)="sortTasks()">
-    <option value="title">Title</option>
-    <option value="status">Status</option>
+    <option value="az">A-Z (Ascending)</option>
+    <option value="za">Z-A (Descending)</option>
+    <option value="status">Status (To Do, In Progress, Done)</option>
   </select>
 </div>
+
 
 <!-- Loading Skeleton -->
 <div *ngIf="isLoading" class="grid grid-cols-1 md:grid-cols-2 gap-4">

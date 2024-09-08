@@ -48,14 +48,19 @@ export class TaskManagerComponent implements OnInit {
   }
 
   sortTasks() {
+    const statusOrder: { [key: string]: number } = { todo: 1, inProgress: 2, done: 3 };
     this.filteredTasks.sort((a, b) => {
-      if (this.sortOption === 'title') {
-        return a.title.localeCompare(b.title);
-      } else {
-        return a.status.localeCompare(b.status);
+      if (this.sortOption === 'az') {
+        return a.title.localeCompare(b.title);  // Sort A-Z
+      } else if (this.sortOption === 'za') {
+        return b.title.localeCompare(a.title);  // Sort Z-A
+      } else if (this.sortOption === 'status') {
+        return (statusOrder[a.status] || 0) - (statusOrder[b.status] || 0);  // Sort by status order
       }
+      return 0;
     });
   }
+  
 
   openEditModal(task: Task) {
     this.editingTask = { ...task };
