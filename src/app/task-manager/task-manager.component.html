@@ -50,6 +50,8 @@
       <div class="flex space-x-2">
         <button (click)="openEditModal(task)" class="text-blue-500">✏️</button>
         <button (click)="deleteTask(task.id)" class="text-red-500">🗑️</button>
+        <!-- Use (click) event for navigation -->
+        <button (click)="navigateToDetails(task.id)" class="text-green-500">👁️ View Details</button>
       </div>
     </div>
     <p class="mt-2">{{ task.description }}</p>

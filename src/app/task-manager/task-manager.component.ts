@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskService } from '../services/task.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 export interface Task {
   id: string;
@@ -26,7 +27,7 @@ export class TaskManagerComponent implements OnInit {
   showEditModal: boolean = false;
   editingTask: Task | null = null;
 
-  constructor(private taskService: TaskService) {}
+  constructor(private taskService: TaskService, private router: Router) {}
 
   ngOnInit() {
     this.loadTasks();
@@ -87,5 +88,9 @@ export class TaskManagerComponent implements OnInit {
       this.tasks = this.tasks.filter(task => task.id !== taskId);
       this.filteredTasks = this.tasks; // Ensure filtered list updates
     });
+  }
+
+  navigateToDetails(taskId: string) {
+    this.router.navigate(['/tasks', taskId]);
   }
 }
