@@ -1,17 +1,16 @@
 <app-header></app-header>
 
-<mat-nav-list class="horizontal-list">
-    <a mat-list-item routerLink="/tasks" routerLinkActive="active" ariaCurrentWhenActive="page">Tasks</a>  
-    <a mat-list-item routerLink="/add-new-task">Add New Task</a>
-  </mat-nav-list>
+<nav class="flex space-x-4 p-4 bg-gray-100">
+  <a routerLink="/tasks" routerLinkActive="text-blue-500 font-bold" class="hover:text-blue-500">Tasks</a>
+  <a routerLink="/add-new-task" routerLinkActive="text-blue-500 font-bold" class="hover:text-blue-500">Add New Task</a>
+</nav>
 
-<div class="main-content">
-  <!-- <app-sidebar></app-sidebar> -->
-  <main>
-    <div class="mat-container">
+<div class="main-content flex">
+  <main class="flex-1 p-4">
+    <div class="container mx-auto">
       <router-outlet></router-outlet>
     </div>
-    
   </main>
 </div>
+
 <app-footer></app-footer>

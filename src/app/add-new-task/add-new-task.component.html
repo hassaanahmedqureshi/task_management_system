@@ -1,17 +1,37 @@
-<form (ngSubmit)="addTask()" #taskForm="ngForm">
-    <mat-form-field>
-      <input matInput placeholder="Title" [(ngModel)]="task.title" name="title" required>
-    </mat-form-field>
-    <mat-form-field>
-      <textarea matInput placeholder="Description" [(ngModel)]="task.description" name="description"></textarea>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-select placeholder="Status" [(ngModel)]="task.status" name="status" required>
-        <mat-option value="todo">Todo</mat-option>
-        <mat-option value="inProgress">In Progress</mat-option>
-        <mat-option value="done">Done</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <button mat-raised-button color="primary" type="submit">Add Task</button>
-  </form>
-  
+<form (ngSubmit)="addTask()" #taskForm="ngForm" class="p-4 bg-white shadow rounded-lg">
+  <!-- Title Input -->
+  <div class="mb-4">
+    <label class="block text-gray-700 font-medium">Title</label>
+    <input type="text" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+           [(ngModel)]="task.title" name="title" required placeholder="Title">
+  </div>
+
+  <!-- Description Textarea -->
+  <div class="mb-4">
+    <label class="block text-gray-700 font-medium">Description</label>
+    <textarea class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              [(ngModel)]="task.description" name="description" placeholder="Description"></textarea>
+  </div>
+
+  <!-- Status Select -->
+  <div class="mb-4">
+    <label class="block text-gray-700 font-medium">Status</label>
+    <select class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            [(ngModel)]="task.status" name="status" required>
+      <option value="todo">Todo</option>
+      <option value="inProgress">In Progress</option>
+      <option value="done">Done</option>
+    </select>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Add Task</button>
+</form>
+
+<!-- Success Message -->
+<div *ngIf="showSuccessMessage" class="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded flex items-center">
+  <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+  </svg>
+  <span>Task added successfully!</span>
+</div>

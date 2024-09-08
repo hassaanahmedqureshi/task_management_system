@@ -16,12 +16,15 @@ import { FormsModule } from '@angular/forms';
 
 export class AddNewTaskComponent {
   task = { title: '', description: '', status: 'todo' };
-
+  showSuccessMessage = false;
+  
   constructor(private taskService: TaskService) {}
 
   addTask() {
     this.taskService.addTask(this.task).subscribe(() => {
-      // Handle success (e.g., navigate back or show a success message)
+      this.showSuccessMessage = true;
+      setTimeout(() => this.showSuccessMessage = false, 3000); // Hide after 3 seconds
+      this.task = { title: '', description: '', status: 'todo' }; // Reset form
     });
   }
 }

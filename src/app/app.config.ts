@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';  // Import FormsModule
 
 import { routes } from './app.routes';
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './layout/layout.component';
 
 export const appConfig: ApplicationConfig = {
   providers: [
