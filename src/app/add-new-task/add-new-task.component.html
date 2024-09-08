@@ -1,0 +1,17 @@
+<form (ngSubmit)="addTask()" #taskForm="ngForm">
+    <mat-form-field>
+      <input matInput placeholder="Title" [(ngModel)]="task.title" name="title" required>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Description" [(ngModel)]="task.description" name="description"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Status" [(ngModel)]="task.status" name="status" required>
+        <mat-option value="todo">Todo</mat-option>
+        <mat-option value="inProgress">In Progress</mat-option>
+        <mat-option value="done">Done</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Add Task</button>
+  </form>
+  
