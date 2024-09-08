@@ -1,0 +1,21 @@
+.horizontal-list {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+
+  mat-list-item {
+    margin-right: 16px;  // Adjust spacing between items as needed
+  }
+
+  mat-list-item:last-child {
+    margin-right: 0;  // Remove margin for the last item
+  }
+
+  .mat-container {
+    margin: 16px;  // Adjust as needed
+    padding: 16px;  // Adjust as needed
+  }
+  
+}
+  
