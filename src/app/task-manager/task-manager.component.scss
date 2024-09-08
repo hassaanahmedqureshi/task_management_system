@@ -1,0 +1,17 @@
+/* Add any additional styles for the skeleton loader here */
+.animate-pulse {
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      background-color: #f3f4f6;
+    }
+    50% {
+      background-color: #e5e7eb;
+    }
+    100% {
+      background-color: #f3f4f6;
+    }
+  }
+  

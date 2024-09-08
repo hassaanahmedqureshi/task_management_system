@@ -13,8 +13,32 @@
   </select>
 </div>
 
+<!-- Loading Skeleton -->
+<div *ngIf="isLoading" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="p-4 bg-white shadow rounded-lg animate-pulse">
+    <div class="h-6 bg-gray-300 rounded mb-2"></div>
+    <div class="h-4 bg-gray-300 rounded mb-4"></div>
+    <div class="h-4 bg-gray-300 rounded mb-2"></div>
+    <div class="h-4 bg-gray-300 rounded"></div>
+  </div>
+
+  <div class="p-4 bg-white shadow rounded-lg animate-pulse">
+    <div class="h-6 bg-gray-300 rounded mb-2"></div>
+    <div class="h-4 bg-gray-300 rounded mb-4"></div>
+    <div class="h-4 bg-gray-300 rounded mb-2"></div>
+    <div class="h-4 bg-gray-300 rounded"></div>
+  </div>
+
+  <div class="p-4 bg-white shadow rounded-lg animate-pulse">
+    <div class="h-6 bg-gray-300 rounded mb-2"></div>
+    <div class="h-4 bg-gray-300 rounded mb-4"></div>
+    <div class="h-4 bg-gray-300 rounded mb-2"></div>
+    <div class="h-4 bg-gray-300 rounded"></div>
+  </div>
+</div>
+
 <!-- Task Cards -->
-<div *ngIf="filteredTasks.length > 0" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div *ngIf="!isLoading && filteredTasks.length > 0" class="grid grid-cols-1 md:grid-cols-2 gap-4">
   <div *ngFor="let task of filteredTasks" class="p-4 bg-white shadow rounded-lg">
     <div class="flex justify-between items-center">
       <div>
@@ -30,7 +54,7 @@
   </div>
 </div>
 
-<div *ngIf="tasks.length === 0">
+<div *ngIf="!isLoading && tasks.length === 0">
   <p>No tasks available.</p>
 </div>
 

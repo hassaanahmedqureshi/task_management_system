@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { TaskService } from '../services/task.service';
+import { FormsModule } from '@angular/forms';
 
 export interface Task {
   id: string;
@@ -18,15 +18,16 @@ export interface Task {
   styleUrls: ['./task-manager.component.scss'],
 })
 export class TaskManagerComponent implements OnInit {
-  tasks: Task[] = []; 
-  editingTask: Task | null = null;
+  tasks: Task[] = [];
   filteredTasks: Task[] = [];
   searchTerm: string = '';
   sortOption: string = 'title';
+  isLoading: boolean = true;  // Added to track loading state
   showEditModal: boolean = false;
+  editingTask: Task | null = null;
 
   constructor(private taskService: TaskService) {}
-  
+
   ngOnInit() {
     this.loadTasks();
   }
@@ -35,6 +36,7 @@ export class TaskManagerComponent implements OnInit {
     this.taskService.getTasks().subscribe((data: Task[]) => {
       this.tasks = data;
       this.filteredTasks = data;
+      this.isLoading = false;  // Set loading to false once data is loaded
     });
   }
 
@@ -68,7 +70,8 @@ export class TaskManagerComponent implements OnInit {
   saveTask() {
     if (this.editingTask) {
       this.taskService.updateTask(this.editingTask).subscribe(() => {
-        this.loadTasks(); // Reload tasks to reflect changes
+        this.tasks = this.tasks.map(t => t.id === this.editingTask!.id ? this.editingTask! : t);
+        this.filteredTasks = this.tasks; // Ensure filtered list updates
         this.closeEditModal(); 
       });
     }
@@ -76,7 +79,8 @@ export class TaskManagerComponent implements OnInit {
 
   deleteTask(taskId: string) {
     this.taskService.deleteTask(taskId).subscribe(() => {
-      this.loadTasks(); // Reload tasks to reflect changes
+      this.tasks = this.tasks.filter(task => task.id !== taskId);
+      this.filteredTasks = this.tasks; // Ensure filtered list updates
     });
   }
 }

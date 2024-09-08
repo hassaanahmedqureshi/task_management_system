@@ -1,16 +1,124 @@
 {
   "tasks": [
     {
-      "id": "bed1",
-      "title": "test 3243243",
-      "description": "test",
+      "id": "task1",
+      "title": "Complete project report",
+      "description": "Finalize the project report and submit it to the client.",
       "status": "todo"
     },
     {
-      "id": "16f9",
-      "title": "test222",
-      "description": "test 2",
+      "id": "task2",
+      "title": "Schedule team meeting",
+      "description": "Organize a meeting with the team to discuss project milestones.",
+      "status": "inProgress"
+    },
+    {
+      "id": "task3",
+      "title": "Update website content",
+      "description": "Revise the content on the website to reflect the latest updates.",
       "status": "done"
+    },
+    {
+      "id": "task4",
+      "title": "Fix bug in login system",
+      "description": "Address the security vulnerability found in the login system.",
+      "status": "inProgress"
+    },
+    {
+      "id": "task5",
+      "title": "Prepare presentation slides",
+      "description": "Create slides for the upcoming client presentation.",
+      "status": "todo"
+    },
+    {
+      "id": "task6",
+      "title": "Conduct user testing",
+      "description": "Organize and conduct testing sessions with end-users.",
+      "status": "done"
+    },
+    {
+      "id": "task7",
+      "title": "Implement new features",
+      "description": "Add new features based on the latest requirements.",
+      "status": "inProgress"
+    },
+    {
+      "id": "task8",
+      "title": "Review code changes",
+      "description": "Review the recent code changes submitted by the development team.",
+      "status": "todo"
+    },
+    {
+      "id": "task9",
+      "title": "Update documentation",
+      "description": "Revise the project documentation to include recent changes.",
+      "status": "done"
+    },
+    {
+      "id": "task10",
+      "title": "Set up CI/CD pipeline",
+      "description": "Configure the continuous integration and deployment pipeline.",
+      "status": "inProgress"
+    },
+    {
+      "id": "task11",
+      "title": "Design new logo",
+      "description": "Create a new logo for the company rebranding.",
+      "status": "todo"
+    },
+    {
+      "id": "task12",
+      "title": "Fix performance issues",
+      "description": "Optimize the application to address performance bottlenecks.",
+      "status": "done"
+    },
+    {
+      "id": "task13",
+      "title": "Implement user feedback",
+      "description": "Incorporate feedback received from users into the next release.",
+      "status": "inProgress"
+    },
+    {
+      "id": "task14",
+      "title": "Organize office space",
+      "description": "Rearrange the office space for better productivity.",
+      "status": "todo"
+    },
+    {
+      "id": "task15",
+      "title": "Update API endpoints",
+      "description": "Revise API endpoints to match the new API schema.",
+      "status": "done"
+    },
+    {
+      "id": "task16",
+      "title": "Train new employees",
+      "description": "Conduct training sessions for new team members.",
+      "status": "inProgress"
+    },
+    {
+      "id": "task17",
+      "title": "Plan marketing strategy",
+      "description": "Develop a marketing strategy for the upcoming product launch.",
+      "status": "todo"
+    },
+    {
+      "id": "task18",
+      "title": "Audit security protocols",
+      "description": "Perform a security audit to ensure compliance with standards.",
+      "status": "done"
+    },
+    {
+      "id": "task19",
+      "title": "Coordinate with vendors",
+      "description": "Communicate with vendors to finalize contracts and delivery schedules.",
+      "status": "inProgress"
+    },
+    {
+      "id": "task20",
+      "title": "Prepare quarterly report",
+      "description": "Compile and prepare the financial report for the last quarter.",
+      "status": "todo"
     }
   ]
 }

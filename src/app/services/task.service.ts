@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { delay, Observable } from 'rxjs';
 import { Task } from '../task-manager/task-manager.component';
 
 @Injectable({
@@ -12,8 +12,8 @@ export class TaskService {
 
   constructor(private http: HttpClient) { }
 
-  getTasks(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  getTasks(): Observable<Task[]> {
+    return this.http.get<Task[]>(this.apiUrl).pipe(delay(1000));
   }
 
   addTask(task: any): Observable<any> {
