@@ -22,7 +22,7 @@
         <p class="text-gray-500">Status: {{ task.status }}</p>
       </div>
       <div class="flex space-x-2">
-        <button (click)="editTask(task)" class="text-blue-500">✏️</button>
+        <button (click)="openEditModal(task)" class="text-blue-500">✏️</button>
         <button (click)="deleteTask(task.id)" class="text-red-500">🗑️</button>
       </div>
     </div>
@@ -34,17 +34,20 @@
   <p>No tasks available.</p>
 </div>
 
-<!-- Edit Form -->
-<div *ngIf="editingTask" class="p-4 bg-white shadow rounded-lg mt-4">
-  <input class="w-full p-2 border border-gray-300 rounded mb-2" [(ngModel)]="editingTask.title" placeholder="Title">
-  <textarea class="w-full p-2 border border-gray-300 rounded mb-2" [(ngModel)]="editingTask.description" placeholder="Description"></textarea>
-  <select class="w-full p-2 border border-gray-300 rounded mb-2" [(ngModel)]="editingTask.status">
-    <option value="todo">Todo</option>
-    <option value="inProgress">In Progress</option>
-    <option value="done">Done</option>
-  </select>
-  <div class="flex space-x-2">
-    <button (click)="saveTask()" class="bg-blue-500 text-white px-4 py-2 rounded">Save</button>
-    <button (click)="editingTask = null" class="bg-gray-500 text-white px-4 py-2 rounded">Cancel</button>
+<!-- Edit Form Modal -->
+<div *ngIf="showEditModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+  <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
+    <h2 class="text-xl font-bold mb-4">Edit Task</h2>
+    <input *ngIf="editingTask" class="w-full p-2 border border-gray-300 rounded mb-2" [(ngModel)]="editingTask.title" placeholder="Title">
+    <textarea *ngIf="editingTask" class="w-full p-2 border border-gray-300 rounded mb-2" [(ngModel)]="editingTask.description" placeholder="Description"></textarea>
+    <select *ngIf="editingTask" class="w-full p-2 border border-gray-300 rounded mb-2" [(ngModel)]="editingTask.status">
+      <option value="todo">Todo</option>
+      <option value="inProgress">In Progress</option>
+      <option value="done">Done</option>
+    </select>
+    <div class="flex space-x-2">
+      <button (click)="saveTask()" class="bg-blue-500 text-white px-4 py-2 rounded">Save</button>
+      <button (click)="closeEditModal()" class="bg-gray-500 text-white px-4 py-2 rounded">Cancel</button>
+    </div>
   </div>
 </div>

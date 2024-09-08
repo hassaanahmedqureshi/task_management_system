@@ -1,40 +1,16 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "title": "Eat Popcorn",
-      "description": "Description 2 new",
-      "status": "inProgress"
-    },
-    {
-      "id": "2",
-      "title": "Task 2",
-      "description": "Description 2 new",
-      "status": "inProgress"
-    },
-    {
-      "id": "3",
-      "title": "Task 2",
-      "description": "Description 2 new",
-      "status": "Completed"
-    },
-    {
-      "id": "af58",
-      "title": "Task 4",
-      "description": "This is a test task 4... ",
-      "status": "inProgress"
-    },
-    {
-      "id": "9133",
-      "title": "test",
+      "id": "bed1",
+      "title": "test 3243243",
       "description": "test",
-      "status": "inProgress"
+      "status": "todo"
     },
     {
-      "id": "0c00",
-      "title": "test",
-      "description": "test",
-      "status": "inProgress"
+      "id": "16f9",
+      "title": "test222",
+      "description": "test 2",
+      "status": "done"
     }
   ]
 }
