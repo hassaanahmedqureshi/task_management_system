@@ -1,5 +1,21 @@
-<div *ngIf="tasks.length > 0" class="task-container">
-  <mat-card *ngFor="let task of tasks" class="task-card">
+<!-- Search Input -->
+<mat-form-field appearance="fill">
+  <mat-label>Search</mat-label>
+  <input matInput [(ngModel)]="searchTerm" (ngModelChange)="filterTasks()" placeholder="Search tasks">
+</mat-form-field>
+
+<!-- Sort Dropdown -->
+<mat-form-field appearance="fill">
+  <mat-label>Sort By</mat-label>
+  <mat-select [(ngModel)]="sortOption" (ngModelChange)="sortTasks()">
+    <mat-option value="title">Title</mat-option>
+    <mat-option value="status">Status</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Task Cards -->
+<div *ngIf="filteredTasks.length > 0" class="task-container">
+  <mat-card *ngFor="let task of filteredTasks" class="task-card">
     <mat-card-header>
       <mat-card-title>{{ task.title }}</mat-card-title>
       <mat-card-subtitle>Status: {{ task.status }}</mat-card-subtitle>
